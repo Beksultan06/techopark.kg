@@ -1,0 +1,137 @@
+{% load static %}
+
+<header class="main-header header-style-one">
+    <!--Header-Upper-->
+    <div class="header-upper">
+        <div class="auto-container">
+            <div class="clearfix">
+
+                <div class="logo-box">
+                    <div class="logo">
+                        <a href="{% url 'index' %}">
+                            <img src="{% static 'images/logo-index.png' %}" alt="Logo" title="Logo">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="upper-right">
+                    <div class="clearfix">
+                        <!--Info Box-->
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-phone-book"></span></div>
+                            <ul>
+                                <li>+996 706 516 999 <br>islambakutbekuulu41@gmail.com</li>
+                            </ul>
+                        </div>
+
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-clock"></span></div>
+                            <ul>
+                                <li>понедельник - суббота 9.00 to 18.00 <br>Воскресенье закрыто</li>
+                            </ul>
+                        </div>
+
+                        <div class="upper-column info-box">
+                            <div class="icon-box"><span class="flaticon-placeholder-2"></span></div>
+                            <ul>
+                                <li>Исанова 81 <br>Osh Technological University </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--End Header Upper-->
+
+    <!--Header Lower-->
+    <div class="header-lower">
+        <div class="auto-container">
+            <div class="nav-outer clearfix">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <!-- Toggle Button -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div class="navbar-collapse collapse clearfix">
+                        <ul class="navigation clearfix">
+                            <li><a href="{% url 'index' %}">Главная</a></li>
+                            <li><a href="{% url 'about' %}">О нас</a></li>
+                            <li><a href="{% url 'services' %}">Наши Услуги</a></li>
+                            <li><a href="{% url 'testimonials' %}">Отзывы</a></li>
+                            <li><a href="{% url 'faq' %}">Часто задаваемые вопросы</a></li>
+                            <li><a href="{% url 'contact' %}">Наши контакты</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                {% comment %} <!-- Main Menu End-->
+
+                <div class="options-box clearfix">
+                    
+
+                    <!--Language Box-->
+                    <div class="lang-box">
+                        <div class="dropdown">
+                            <button class="lang-btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Eng <span class="fa fa-angle-down"></span>
+                            </button>
+                            <ul class="dropdown-menu search-panel" aria-labelledby="dropdownMenu2">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">German</a></li>
+                                <li><a href="#">French</a></li>
+                                <li><a href="#">Dutch</a></li>
+                                <li><a href="#">Chinese</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </div>
+    <!--End Header Lower-->
+
+    <!--Sticky Header-->
+    <div class="sticky-header">
+        <div class="auto-container clearfix">
+            <!--Logo-->
+            <div class="logo pull-left">
+                <a href="{% url 'index' %}" class="img-responsive"><img src="{% static 'images/logo2.png' %}" alt="" title=""></a>
+            </div>
+
+            <!--Right Col-->
+            <div class="right-col pull-right">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div class="navbar-collapse collapse clearfix">
+                        <ul class="navigation clearfix">
+                            <li><a href="{% url 'index' %}">Главная</a></li>
+                            <li><a href="{% url 'about' %}">О нас</a></li>
+                            <li><a href="{% url 'services' %}">Наши Услуги</a></li>
+                            <li><a href="{% url 'testimonials' %}">Отзывы</a></li>
+                            <li><a href="{% url 'faq' %}">Часто задаваемые вопросы</a></li>
+                            <li><a href="{% url 'contact' %}">Наши контакты</a></li>
+                        </ul>
+                    </div>
+                </nav><!-- Main Menu End-->
+            </div>
+        </div>
+    </div>
+    <!--End Sticky Header-->
+
+</header>

@@ -1,0 +1,86 @@
+{% extends 'include/homepage.html' %}
+{%load static%}
+{%block content%}
+<div class="page-wrapper">
+    <div class="preloader"></div>
+       {% include 'include/header.html' %}
+    <section class="page-title">
+    	<div class="image-layer" style="background-image:url({% static 'images/background/7.jpg' %});"></div>
+        <div class="auto-container">
+        	<h1>Наши Услуги</h1>
+            <div class="bread-crumb">
+            	<ul class="clearfix">
+                	<li><a href="{% url 'index' %}">Главная</a></li>
+                    <li class="active">Наши Услуги</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="services-five">
+    	<div class="auto-container">
+            <div class="sec-title centered">
+            	<h1>{{ services_id.title_exceptional }}</h1>
+                <div class="text">{{ services_id.description_exceptional }}</div>
+            </div>
+            <div class="row clearfix">
+                {% for service in service_all %}
+                <div class="service-block-four col-md-4 col-sm-6 col-xs-12">
+                	<div class="inner-box">
+                    	<figure class="image-box"><img src="{{ service.image.url }}" alt=""></figure>
+                        <div class="lower-box">
+                            <h3><a href="service-single.html">{{ service.title }}</a></h3>
+                            <div class="text">{{ service.text }}</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="why-us" style="background-image:url({{ services_id.image.url }})">
+    	<div class="outer-container clearfix">
+            <div class="content-column">
+            	<div class="inner">
+                    <div class="sec-title-two light">
+                        <h1>{{ services_id.title_profesional }}</h1>
+                    </div>
+                    <div class="text">{{ services_id.description_profesional }}</div>
+                    <div class="link-box"><a href="contact.html" class="theme-btn btn-style-two">Get Start</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services-section no-bg">
+    	<div class="auto-container">
+            <div class="sec-title centered">
+            	<h1>{{ services_id.title_services }}</h1>
+                <div class="text">{{ services_id.description_services }}</div>
+            </div>
+            <div class="row clearfix">
+                {% for services in services_all %}
+                <div class="service-block-one col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                	<div class="inner-box">
+                        {% if services.icon == 'Financial Planning' %}
+                    	<div class="icon-box"><span class="flaticon-idea-1"></span></div>
+                        {% endif %}
+                        {% if services.icon == 'Savings & Investments' %}
+                    	<div class="icon-box"><span class="flaticon-piggy-bank"></span></div>
+                        {% endif %}
+                        {% if services.icon == 'Private Banking' %}
+                    	<div class="icon-box"><span class="flaticon-skyline"></span></div>
+                        {% endif %}
+                        {% if services.icon == 'Consumer Leasing' %}
+                    	<div class="icon-box"><span class="flaticon-visitor"></span></div>
+                        {% endif %}
+                    	<h3><a href="service-single.html">{{ services.title }}</a></h3>
+                        <div class="text">{{ services.description }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% include 'include/footer.html' %}
+</div>
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+{% endblock %}

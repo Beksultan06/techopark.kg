@@ -1,0 +1,59 @@
+{% extends 'include/homepage.html' %}
+{%load static%}
+{%block content%}
+<div class="page-wrapper">
+    <div class="preloader"></div>
+           {% include 'include/header.html' %}
+    <section class="page-title">
+    	<div class="image-layer" style="background-image:url({% static 'images/background/7.jpg' %});"></div>
+        <div class="auto-container">
+        	<h1>Отзывы</h1>
+            <div class="bread-crumb">
+            	<ul class="clearfix">
+                	<li><a href="{% url 'index' %}">Главная</a></li>
+                    <li class="active">Отзывы</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials-three">
+    	<div class="auto-container">
+            <div class="sec-title centered">
+            	<h1>Что говорят наши клиенты</h1>
+            </div>
+            <div class="outer-box">
+            	<div class="clearfix">
+                    <div class="testi-column col-md-6 col-sm-12 col-xs-12">
+                        {% for contact in first_five %}
+                        <div class="testimonial-block">
+                            <div class="inner">
+                                <div class="text">“{{ contact.message }}”</div>
+                                <div class="info">
+                                    <h4>{{ contact.full_name }}</h4>
+                                    <div class="designation">{{ contact.email }}</div> 
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="testi-column col-md-6 col-sm-12 col-xs-12">
+                        {% for contact in last_five %}
+                        <div class="testimonial-block">
+                            <div class="inner">
+                                <div class="text">“{{ contact.message }}”</div>
+                                <div class="info">
+                                    <h4>{{ contact.full_name }}</h4>
+                                    <div class="designation">{{ contact.email }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+            	</div>           
+            </div> 
+        </div>
+    </section>
+       {% include 'include/footer.html' %}
+</div>
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+{% endblock %}

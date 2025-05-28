@@ -1,0 +1,100 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-wrapper">
+ 	
+    <!-- Preloader -->
+    <div class="preloader"></div>
+ 	
+    <!-- Main Header-->
+    {% include 'include/header.html' %}
+    <!--End Main Header -->
+    
+    <!--Page Title-->
+    <section class="page-title">
+    	<div class="image-layer" style="background-image:url({% static 'images/background/7.jpg' %});"></div>
+        <div class="auto-container">
+        	<h1>О нас </h1>
+            <div class="bread-crumb">
+            	<ul class="clearfix">
+                	<li><a href="{% url 'index' %}">Главная</a></li>
+                    <li class="active">О нас</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--About Three Section-->
+    <section class="about-three">
+    	<div class="auto-container">
+            
+            <div class="row clearfix">
+            	<!--Image Column-->
+                <div class="image-column col-md-4 col-sm-6 col-xs-12">
+                	<div class="inner">
+                    	<figure class="image-box"><img src="{{ about_id.image.url }}" alt=""></figure>
+                    </div>
+                </div>
+                <!--Title Column-->
+                <div class="title-column col-md-4 col-sm-6 col-xs-12">
+                	<div class="inner">
+                    	<h2>{{ about_id.year }}</h2>
+                        <h3>{{ about_id.title }}</h3>
+                    </div>
+                </div>
+                <!--Text Column-->
+                <div class="text-column col-md-4 col-sm-12 col-xs-12">
+                	<div class="inner">
+                    	<div class="text">
+                            <p>{{ about_id.text }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--Services Section-->
+    <section class="services-four">
+    	<div class="auto-container">
+            <div class="sec-title centered">
+            	<h1>{{ about_id.title_choices_us }}</h1>
+                <div class="text">{{ about_id.description }}</div>
+            </div>
+            <div class="services-carousel owl-theme owl-carousel">
+            	<!--Service Block-->
+                {% for about in about_all %}
+                <div class="service-block-two">
+                	<div class="inner-box">
+                    	<figure class="icon-box"><img src="{{ about.image.url }}" alt=""></figure>
+                    	<h3><a href="service-single.html">{{ about.title }}</a></h3>
+                        <div class="text">{{ about.text }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="about-four">
+    	<div class="outer-container clearfix">
+            <!--Content Column-->
+            <div class="content-column">
+                <div class="inner">
+                    <h1>{{ about_id.title_ceo }}</h1>
+                    <div class="text">{{ about_id.description_ceo }}</div>
+                    <div class="name">{{ about_id.name_ceo }}</div>
+                </div>
+            </div>
+        	<!--Image Column-->
+            <div class="image-column"><div class="image-layer" style="background-image:url({{ about_id.image_ceo.url }})"></div></div>
+        </div>
+    </section>    
+    <!--Main Footer-->
+    {% include 'include/footer.html' %}
+</div>
+<!--End pagewrapper-->
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+{% endblock %}

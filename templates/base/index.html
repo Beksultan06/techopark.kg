@@ -1,0 +1,412 @@
+{% extends 'include/homepage.html' %}
+{%load static%}
+{%block content%}
+<div class="page-wrapper">
+ 	
+    <!-- Preloader -->
+    <div class="preloader"></div>
+ 	
+    <!-- Main Header-->
+   {% include 'include/header.html' %}
+    <!--End Main Header -->
+
+    <!--Main Slider-->
+    <section class="main-slider">
+    	
+        <div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_one_wrapper" data-source="gallery">
+            <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
+                <ul>
+                
+                	<li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1687" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="{% static 'images/main-slider/image-1.jpg' %}" data-title="Slide Title" data-transition="parallaxvertical">
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ banners.image.url }}"> 
+                    
+                    <div class="tp-caption tp-resizeme" 
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-width="['800','800','800','320']"
+                    data-whitespace="normal"
+                    data-hoffset="['15','15','15','15']"
+                    data-voffset="['-80','-80','-20','-40']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                    	<h2>{{ banners.title }}</h2>
+                    </div>
+                    
+                    <div class="tp-caption tp-resizeme" 
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-width="['600','600','600','320']"
+                    data-whitespace="normal"
+                    data-hoffset="['15','15','15','15']"
+                    data-voffset="['10','10','30','30']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                    	<div class="text">{{ banners.descriptions }}</div>
+                    </div>
+                    
+                    <div class="tp-caption tp-resizeme" 
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-width="['600','600','600','320']"
+                    data-whitespace="normal"
+                    data-hoffset="['15','15','15','15']"
+                    data-voffset="['120','120','120','120']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                    	<a href="{% url "contact" %}" class="theme-btn btn-style-one">Наши контакты</a>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Main Slider-->
+    
+    <!--About Section-->
+    <section class="about-section">
+    	<div class="auto-container">
+        	<!--Heading-->
+            <div class="sec-title centered">
+            	<h1>{{ settings_id.title_about }}</h1>
+                <div class="text">{{ settings_id.description }}</div>
+            </div>
+            
+            <div class="row clearfix">
+            	<!--Left Column-->
+                <div class="left-column col-md-6 col-sm-12 col-xs-12">
+                	<div class="inner">
+                    	<h2>{{ settings_id.title_athor }}</h2>
+                        <div class="info"><figure class="image img-circle"><img class="img-circle" src="{{ settings_id.image_author.url }}" alt=""></figure> Jisana smith,  <span class="designation">Manager</span></div>
+                    </div>
+                </div>
+                
+                <!--Right Column-->
+                <div class="right-column col-md-6 col-sm-12 col-xs-12">
+                	<div class="inner">
+                    	<div class="text">{{ settings_id.description_about }}</div>
+                        <div class="link-box"><a href="about.html">Читать далее <span class="fa fa-long-arrow-right"></span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--Services Section-->
+    <section class="services-section">
+    	<div class="auto-container">
+        	<!--Heading-->
+            <div class="sec-title centered">
+            	<h1>{{ settings_id.title_services }}</h1>
+                <div class="text">{{ settings_id.description_service }}</div>
+            </div>
+            
+            <div class="row clearfix">
+            	<!--Service Block-->
+                {% for services in services_all %}
+                <div class="service-block-one col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                	<div class="inner-box">
+                        {% if services.icon == 'Financial Planning' %}
+                    	<div class="icon-box"><span class="flaticon-idea-1"></span></div>
+                        {% endif %}
+                        {% if services.icon == 'Savings & Investments' %}
+                    	<div class="icon-box"><span class="flaticon-piggy-bank"></span></div>
+                        {% endif %}
+                        {% if services.icon == 'Private Banking' %}
+                    	<div class="icon-box"><span class="flaticon-skyline"></span></div>
+                        {% endif %}
+                        {% if services.icon == 'Consumer Leasing' %}
+                    	<div class="icon-box"><span class="flaticon-visitor"></span></div>
+                        {% endif %}
+                    	<h3><a href="service-single.html">{{ services.title }}</a></h3>
+                        <div class="text">{{ services.description }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--Cases Section-->
+    <section class="cases-section">
+    	<div class="auto-container">
+        	<!--Heading-->
+            <div class="sec-title centered">
+            	<h1>{{ settings_id.title_cases }}</h1>
+                <div class="text">{{ settings_id.description_cases }}</div>
+            </div>
+        </div>
+        <div class="carousel-outer">
+            <div class="cases-carousel owl-theme owl-carousel">
+            	<!--Case Block-->
+            	<div class="default-case-block">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="projects.html"><img src="{% static 'images/resource/image-2.jpg' %}" alt=""></a></figure>
+                        <div class="overlay-box">
+                        	<div class="overlay-inner">
+                            	<div class="overlay-content">
+                                	<h3><a href="projects.html">Crispent ethiopie philippe</a></h3>
+                                    <div class="categories"><a href="projects.html">Business</a>|<a href="projects.html">Corporate</a></div>
+                                    <div class="link-box"><a href="projects.html">Read More <span class="fa fa-long-arrow-right"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Case Block-->
+            	<div class="default-case-block">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="projects.html"><img src="{% static 'images/resource/image-3.jpg' %}" alt=""></a></figure>
+                        <div class="overlay-box">
+                        	<div class="overlay-inner">
+                            	<div class="overlay-content">
+                                	<h3><a href="projects.html">Nouvelle trouvait supplice</a></h3>
+                                    <div class="categories"><a href="projects.html">Business</a>|<a href="projects.html">Corporate</a></div>
+                                    <div class="link-box"><a href="projects.html">Read More <span class="fa fa-long-arrow-right"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Case Block-->
+            	<div class="default-case-block">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="projects.html"><img src="{% static 'images/resource/image-4.jpg' %}" alt=""></a></figure>
+                        <div class="overlay-box">
+                        	<div class="overlay-inner">
+                            	<div class="overlay-content">
+                                	<h3><a href="projects.html">Crispent ethiopie philippe</a></h3>
+                                    <div class="categories"><a href="projects.html">Business</a>|<a href="projects.html">Corporate</a></div>
+                                    <div class="link-box"><a href="projects.html">Read More <span class="fa fa-long-arrow-right"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Case Block-->
+            	<div class="default-case-block">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="projects.html"><img src="{% static 'images/resource/image-2.jpg' %}" alt=""></a></figure>
+                        <div class="overlay-box">
+                        	<div class="overlay-inner">
+                            	<div class="overlay-content">
+                                	<h3><a href="projects.html">Crispent ethiopie philippe</a></h3>
+                                    <div class="categories"><a href="projects.html">Business</a>|<a href="projects.html">Corporate</a></div>
+                                    <div class="link-box"><a href="projects.html">Read More <span class="fa fa-long-arrow-right"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Case Block-->
+            	<div class="default-case-block">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="projects.html"><img src="{% static 'images/resource/image-3.jpg' %}" alt=""></a></figure>
+                        <div class="overlay-box">
+                        	<div class="overlay-inner">
+                            	<div class="overlay-content">
+                                	<h3><a href="projects.html">Nouvelle trouvait supplice</a></h3>
+                                    <div class="categories"><a href="projects.html">Business</a>|<a href="projects.html">Corporate</a></div>
+                                    <div class="link-box"><a href="projects.html">Read More <span class="fa fa-long-arrow-right"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Case Block-->
+            	<div class="default-case-block">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="projects.html"><img src="{% static 'images/resource/image-4.jpg' %}" alt=""></a></figure>
+                        <div class="overlay-box">
+                        	<div class="overlay-inner">
+                            	<div class="overlay-content">
+                                	<h3><a href="projects.html">Crispent ethiopie philippe</a></h3>
+                                    <div class="categories"><a href="projects.html">Business</a>|<a href="projects.html">Corporate</a></div>
+                                    <div class="link-box"><a href="projects.html">Read More <span class="fa fa-long-arrow-right"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Case Block-->
+            	<div class="default-case-block">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="projects.html"><img src="{% static 'images/resource/image-2.jpg' %}" alt=""></a></figure>
+                        <div class="overlay-box">
+                        	<div class="overlay-inner">
+                            	<div class="overlay-content">
+                                	<h3><a href="projects.html">Crispent ethiopie philippe</a></h3>
+                                    <div class="categories"><a href="projects.html">Business</a>|<a href="projects.html">Corporate</a></div>
+                                    <div class="link-box"><a href="projects.html">Read More <span class="fa fa-long-arrow-right"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Case Block-->
+            	<div class="default-case-block">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="projects.html"><img src="{% static 'images/resource/image-3.jpg' %}" alt=""></a></figure>
+                        <div class="overlay-box">
+                        	<div class="overlay-inner">
+                            	<div class="overlay-content">
+                                	<h3><a href="projects.html">Nouvelle trouvait supplice</a></h3>
+                                    <div class="categories"><a href="projects.html">Business</a>|<a href="projects.html">Corporate</a></div>
+                                    <div class="link-box"><a href="projects.html">Read More <span class="fa fa-long-arrow-right"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Case Block-->
+            	<div class="default-case-block">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="projects.html"><img src="{% static 'images/resource/image-4.jpg' %}" alt=""></a></figure>
+                        <div class="overlay-box">
+                        	<div class="overlay-inner">
+                            	<div class="overlay-content">
+                                	<h3><a href="projects.html">Crispent ethiopie philippe</a></h3>
+                                    <div class="categories"><a href="projects.html">Business</a>|<a href="projects.html">Corporate</a></div>
+                                    <div class="link-box"><a href="projects.html">Read More <span class="fa fa-long-arrow-right"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!--Statistics Section-->
+    <section class="statistics-section">
+    	<div class="outer-container clearfix">
+        	<!--Image Column-->
+            <div class="image-column"><div class="image-layer" style="background-image:url({{ settings_id.image_static1.url }})"></div></div>
+            <!--Content Column-->
+            <div class="content-column" style="background-image:url({{ settings_id.image_static2.url }});">
+            	<div class="inner">
+                	<!--Heading-->
+                    <div class="sec-title light">
+                        <h1>{{ settings_id.title_static }}</h1>
+                        <div class="text">{{ settings_id.description_static }}</div>
+                    </div>
+                    
+                    <!--Skills-->
+                    <div class="skills">
+                        <!--Skill Item-->
+                        {% for staistic in statistic_all %}
+                        <div class="skill-item">
+                            <div class="skill-header clearfix">
+                                <div class="skill-title">{{ staistic.title }}</div>
+                                <div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="{{ staistic.percent }}">0</span>%</div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-inner"><div class="bar progress-line" data-width="65"></div></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--News Section-->
+    <section class="news-section">
+    	<div class="auto-container">
+        	<!--Heading-->
+            <div class="sec-title centered">
+            	<h1>{{ settings_id.title_news }}</h1>
+                <div class="text">{{ settings_id.description_news }}</div>
+            </div>
+            
+            <div class="row clearfix">
+            	<!--News Block-->
+                {% for news in news_all %}
+                <div class="news-block-one col-md-4 col-sm-6 col-xs-12">
+                	<div class="inner-box">
+                    	<figure class="image-box"><a href="blog-detail.html"><img src="{{ news.image.url }}" alt=""></a></figure>
+                    	<h3><a href="blog-detail.html">{{ news.title }}</a></h3>
+                        <div class="post-info">{{ news.data }}</div>
+                        <div class="text">{{ news.description }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--Get Quote Section-->
+    <section class="get-quote-section">
+    	<div class="auto-container">
+        	<!--Heading-->
+            <div class="sec-title centered">
+            	<h1>{{ settings_id.title_contact }}</h1>
+                <div class="text">{{ settings_id.description_contact }}</div>
+            </div>
+            
+            <div class="form-container">
+            
+                <div class="form-style-one quote-form">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row clearfix">
+                            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+                                <input type="text" name="username" value="" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group col-md-4 col-sm-6 col-xs-12">
+                                <input type="text" name="email" value="" placeholder="Email" required>
+                            </div>
+                            <div class="form-group col-md-4 col-sm-12 col-xs-12">
+                                <input type='text' name='info' value='' placeholder='Type information' required>
+                            </div>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <textarea name="message" placeholder="Write Message"></textarea>
+                            </div>
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="text-center"><button type="submit" class="theme-btn btn-style-three">Submit</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div><!--End Quote Form-->
+            </div>
+        </div>
+    </section>
+    <!--Main Footer-->
+    {% include 'include/footer.html' %}
+    
+    
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+
+{% endblock %}

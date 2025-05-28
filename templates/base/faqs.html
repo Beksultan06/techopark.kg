@@ -1,0 +1,54 @@
+{% extends 'include/homepage.html' %}
+{%load static%}
+{%block content%}
+<div class="page-wrapper">
+    <div class="preloader"></div>
+   {% include 'include/header.html' %}
+    <section class="page-title">
+    	<div class="image-layer" style="background-image:url({% static 'images/background/7.jpg' %});"></div>
+        <div class="auto-container">
+        	<h1>Часто задаваемый вопросы</h1>
+            <div class="bread-crumb">
+            	<ul class="clearfix">
+                	<li><a href="{% url 'index' %}">Главная</a></li>
+                    <li class="active">Часто задаваемый вопросы</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="faqs-section">
+    	<div class="auto-container">
+            <div class="sec-title centered">
+            	<h1>Часто задаваемый вопросы</h1>
+            </div>
+            <div class="tabs-box faq-tabs">
+                <ul class="tab-buttons clearfix">
+                    {% for category in categories %}
+                        <li class="tab-btn {% if forloop.first %}active-btn{% endif %}" data-tab="#tab-{{ category.id }}">
+                            {{ category.name }} <span class="fa fa-question-circle"></span>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="tabs-content">
+                    {% for category in categories %}
+                        <div class="tab {% if forloop.first %}active-tab{% endif %}" id="tab-{{ category.id }}">
+                            {% for faq in category.faqs.all %}
+                                <div class="faq-block">
+                                    <h3>{{ faq.question }}</h3>
+                                    <div class="text">
+                                        <p>{{ faq.answer|safe }}</p>
+                                    </div>
+                                </div>
+                            {% empty %}
+                                <p>No FAQs in this category.</p>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+        {% include 'include/footer.html' %}
+</div>
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+{% endblock %}
